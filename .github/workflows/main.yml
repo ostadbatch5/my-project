@@ -1,0 +1,17 @@
+name: CI/CD Pipeline for ostad-react
+on:
+  push:
+    branches: [main]
+  pull_request:
+    branches: [main]
+
+jobs:
+  read_hello_file:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Git Clone
+        uses: actions/checkout@v4
+        
+      - name: Read hello.txt
+        run: |
+          cat hello.txt
